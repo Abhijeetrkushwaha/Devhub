@@ -1,12 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Nav from './components/Nav'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 function App() {
+
+  const [auth, setAuth] = useState(false)
+
   return (
-    <div className="App">
-      <h1>Devhub</h1>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+       <Nav auth={auth} />
+
+       {/* <button onClick={() => setAuth(true)}>Click me</button> */}
+      </div>
+    </BrowserRouter>
   );
 }
 
