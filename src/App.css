@@ -15,3 +15,43 @@ img{
   width: 50px;
   display: flex;
 }
+.menu-icon{
+  display: none;
+}
+.msg-sm{
+  display: none;
+}
+.nav-list.active{
+  left: 0;
+}
+@media screen and (max-width: 900px){
+  .nav-list{
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: .4s ease;
+  }
+  .nav-list li{
+    margin-top: 50px;
+    width: 100%;
+  }
+  .menu-icon{
+    display: block;
+  }
+  .msg-sm{
+    display: block;
+  }
+  .msg-bg{
+    display: none;
+  }
+  .close{
+    position: absolute;
+    top: 0;
+    right: 20px;
+  }
+}
