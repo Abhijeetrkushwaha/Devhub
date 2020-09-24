@@ -3,6 +3,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+body{
+  background-color: rgb(255, 217, 255);
+}
 img{
   width: 100%;
   height: auto;
@@ -28,6 +31,30 @@ img{
 }
 /* Nav.js */
 
+/* Dashboard */
+.project-list .project-summary{
+  padding: 10px 5px 0;
+}
+.user-info{
+  display: flex;
+  padding: 10px 10px 10px 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-detail{
+  display: flex;
+  align-items: center;
+}
+.username{
+  margin-left: 5px;
+  font-weight: bold;
+}
+.project-content{
+  display: flex;
+  justify-content: space-between;
+}
+/* Dashboard */
+
 @media screen and (max-width: 900px){
   /* Nav.js */
   .nav-list{
@@ -40,6 +67,8 @@ img{
     align-items: center;
     flex-direction: column;
     transition: .4s ease;
+    z-index: 999999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
   }
   .nav-list li{
     margin-top: 50px;
