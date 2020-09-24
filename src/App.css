@@ -7,16 +7,18 @@ img{
   width: 100%;
   height: auto;
 }
+/* Nav.js */
 .nav-list{
   display: flex;
   align-items: center;
 }
 .img{
-  width: 50px;
+  width: 45px;
   display: flex;
 }
 .menu-icon{
   display: none;
+  font-size: 25px;
 }
 .msg-sm{
   display: none;
@@ -24,7 +26,10 @@ img{
 .nav-list.active{
   left: 0;
 }
+/* Nav.js */
+
 @media screen and (max-width: 900px){
+  /* Nav.js */
   .nav-list{
     width: 250px;
     height: 100vh;
@@ -45,6 +50,7 @@ img{
   }
   .msg-sm{
     display: block;
+    margin-top: 10px;
   }
   .msg-bg{
     display: none;
@@ -54,4 +60,12 @@ img{
     top: 0;
     right: 20px;
   }
+  /* Nav.js */
+}
+@media screen and (max-width: 600px){
+  /* Nav.js */
+  .msg-sm{
+    margin-top: 5px;
+  }
+  /* Nav.js */
 }
