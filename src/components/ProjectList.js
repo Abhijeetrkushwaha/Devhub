@@ -4,7 +4,7 @@ import Chat from '../images/chatapp.png'
 
 const ProjectList = () => {
     return (
-        <div className=" section">
+        <div className="section">
             <div className="card z-depth-1 project-summary">
                 <div className="user-info">
                     <div className="user-detail">
@@ -18,7 +18,7 @@ const ProjectList = () => {
             </div>
                 <div className="card-content project-content grey-text text-darken-3">
                     <span className="card-title">Project Title</span>
-                    <button className="btn purple">View</button>
+                    <button className="btn-small purple">View</button>
                 </div>
             </div>
         </div>

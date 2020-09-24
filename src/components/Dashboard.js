@@ -4,7 +4,7 @@ import ProjectList from './ProjectList'
 
 function Dashboard() {
     return (
-        <div className="dashboard container">
+        <div className="dashboard">
             <div className="row">
                 <div className="col s12 m12 l6">
                     <ProjectList />

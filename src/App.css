@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body{
-  background-color: rgb(255, 217, 255);
+  background-color: rgb(255, 231, 255);
 }
 img{
   width: 100%;
@@ -32,6 +32,11 @@ img{
 /* Nav.js */
 
 /* Dashboard */
+.dashboard{
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 .project-list .project-summary{
   padding: 10px 5px 0;
 }
@@ -54,6 +59,26 @@ img{
   justify-content: space-between;
 }
 /* Dashboard */
+
+/* Login */
+.form{
+  padding: 10px 30px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.form h5{
+  font-weight: 600;
+}
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+textarea:not(.browser-default):focus:not([readonly]){
+    border-color: purple;
+    box-shadow: none;
+}
+/* Login */
 
 @media screen and (max-width: 900px){
   /* Nav.js */
