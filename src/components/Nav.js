@@ -34,7 +34,7 @@ function Nav({ auth }) {
                 <Link to="/profile">Profile</Link>
             </li>
             <li>
-                <Link to="/logout">Logout</Link>
+                <Link to="/logout">logout</Link>
             </li>
             <li>
                 <Link to="/logout">
@@ -50,11 +50,11 @@ function Nav({ auth }) {
         <header>
             <nav className="nav-wrapper purple">
                 <div className="container">
-                    <Link to="/" >
-                        <a href="#" className="brand-logo hide-on-med-and-down left orange-text">Devhub</a>
+                    <Link to="/" className="brand-logo hide-on-med-and-down left orange-text">
+                        Devhub
                     </Link>
-                    <Link to="/" >
-                        <a href="#" className="brand-logo hide-on-large-only center orange-text">Devhub</a>
+                    <Link to="/" className="brand-logo hide-on-large-only center orange-text">
+                       Devhub
                     </Link>
                     <div class="menu-icon open left" onClick={handleOpenClick}>
                         <i class="fas fa-align-left"></i>
