@@ -80,6 +80,34 @@ textarea:not(.browser-default):focus:not([readonly]){
 }
 /* Login */
 
+/* Profile */
+.avatar{
+  background-color: rgb(194, 194, 194);
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.avatar-name{
+  padding: 0;
+  margin: 0;
+}
+.profile-detail{
+  padding: 20px;
+}
+.project-done-no{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.project-done-no button{
+  margin-left: 20px;
+}
+/* Profile */
+
 @media screen and (max-width: 900px){
   /* Nav.js */
   .nav-list{
