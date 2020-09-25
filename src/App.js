@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Nav from './components/Nav'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { db, auth } from './firebase';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -11,12 +12,38 @@ import Chat from './components/Chat'
 
 function App() {
 
-  const [auth, setAuth] = useState(true)
+  const [authentication, setAuthentication] = useState(true);
+  const [user, setUser] = useState(null);
+  const [username, setUsername] = useState('');
+  const [waitToLoad, setWaitToLoad] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        // user is logged in...
+        // console.log(authUser);
+        setUser(authUser);
+        setWaitToLoad(true)
+
+      } else {
+        // user is logged out...
+        setUser(null)
+        setWaitToLoad(true)
+      }
+    })
+
+    return () => {
+      // perform some cleanup activity
+      unsubscribe()
+    }
+  }, [user, username]);
 
   return (
     <BrowserRouter>
       <div className="App">
-       <Nav auth={auth} />
+       {
+         waitToLoad && <Nav user={user} />
+       }
        <Switch>
          <Route exact path='/' component={Dashboard} />
          <Route path='/login' component={Login} />
