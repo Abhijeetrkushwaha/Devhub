@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Chat from '../images/chat.png'
 
 function Nav({ user }) {
-    console.log(user);
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -39,8 +38,8 @@ function Nav({ user }) {
    </ul>
     ) : (
         <ul className={`nav-list right purple ${ isOpen && 'active'}`}>
-             <div class="menu-icon close" onClick={handleCloseClick}>
-                <i class="fas fa-times"></i>
+             <div className="menu-icon close" onClick={handleCloseClick}>
+                <i className="fas fa-times"></i>
              </div>        
             <li>
                 <Link to="/login" onClick={() => setIsOpen(false)}>Login</Link>
@@ -51,7 +50,7 @@ function Nav({ user }) {
         </ul> 
     )
 
-    const chatRoomAtSmall = !user ? (
+    const chatRoomAtSmall = user ? (
         <Link to="/chat">
             <div className="img right msg-sm">
                 <img src={Chat} alt=""/>
