@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Chat from '../images/chat.png'
+import Chat from '../images/chat.png';
+import { db, auth } from '../firebase';
 
 function Nav({ user }) {
 
@@ -26,7 +27,10 @@ function Nav({ user }) {
            <Link to="/profile" onClick={() => setIsOpen(false)}>Profile</Link>
        </li>
        <li>
-           <Link to="/logout" onClick={() => setIsOpen(false)}>logout</Link>
+           <Link to="/" onClick={() => {
+               auth.signOut()
+               setIsOpen(false)
+               }}>logout</Link>
        </li>
        <li>
            <Link to="/chat">

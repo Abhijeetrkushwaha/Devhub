@@ -12,16 +12,16 @@ import Chat from './components/Chat'
 
 function App() {
 
-  const [authentication, setAuthentication] = useState(true);
   const [user, setUser] = useState(null);
-  const [username, setUsername] = useState('');
   const [waitToLoad, setWaitToLoad] = useState(false);
+  const [posts, setPosts] = useState([]);
+  // const [waitSignal, setWaitSignal] = useState('');
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         // user is logged in...
-        // console.log(authUser);
+        console.log(authUser);
         setUser(authUser);
         setWaitToLoad(true)
 
@@ -36,7 +36,8 @@ function App() {
       // perform some cleanup activity
       unsubscribe()
     }
-  }, [user, username]);
+  }, [user]);
+
 
   return (
     <BrowserRouter>
