@@ -77,6 +77,25 @@ img{
 .project-list .project-summary{
   padding: 10px 5px 0;
 }
+.welcome-greeting{
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  justify-content: start;
+}
+.take-to-create{
+  margin-top: 8px;
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 200px;
+  margin-left: 10px;
+  border-radius: 10px;
+}
 .user-info{
   display: flex;
   padding: 10px 10px 10px 5px;
@@ -191,4 +210,12 @@ textarea:not(.browser-default):focus:not([readonly]){
     margin-top: 5px;
   }
   /* Nav.js */
+  /* Dashboard */
+  .welcome-greeting{
+    display: block;
+  }
+  .welcome-greeting h5{
+    margin-bottom: 20px;
+  }
+  /* Dashboard */
 }
