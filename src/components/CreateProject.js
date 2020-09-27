@@ -22,7 +22,7 @@ function CreateProject({ user }) {
                     <input type="text" id="social-link" onChange={() => {}}/>
                 </div>
                 <div className="input-field">
-                    <p className="grey-text">Choose a pic of your project:</p>
+                    <p className="grey-text">Choose a pic for your project:</p>
                     <input type="file" onChange={() => {}}/>
                 </div>
                 <div className="input-field">
