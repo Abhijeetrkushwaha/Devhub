@@ -1,29 +1,33 @@
 import React, { useState } from 'react';
 import { auth } from '../firebase';
 
-function Signup() {
-
+function Signup(props) {
+    // console.log(props);
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
+    const [waitSignal, setWaitSignal] = useState('');
 
     const signUp = (e) => {
+        // console.log(props.history);
         e.preventDefault()
-        //   setWaitSignal('just a second....')
+          setWaitSignal('just a second....')
             auth.createUserWithEmailAndPassword(email, password)
           .then((authUser) => {
             setEmail('')
             setPassword('')
-            // setUsername('')
-            // setWaitSignal('')
-            return authUser.user.updateProfile({
-              displayName: username,
-            })
-          })
+            setUsername('')
+            setWaitSignal('')
+            return (
+                authUser.user.updateProfile({
+                    displayName: username,
+                  })
+            )
+          }).then(() => props.history.push('/'))
           .catch((err) => {
-            alert(err.message)
-            // setWaitSignal('')
+            setWaitSignal(err.message)
           })
+          
       }
 
     return (
@@ -48,6 +52,9 @@ function Signup() {
                     <label htmlFor="social-link">Social Link (optional)</label>
                     <input type="text" id="social-link" onChange={() => {}}/>
                     <p className="grey-text">Let us know any social media link so everyone can connect with you.</p>
+                </div>
+                <div className="center">
+                <p className="red-text">{waitSignal}</p>
                 </div>
                 <div className="input-field">
                     <button className="btn purple" onClick={signUp}>Signup</button>

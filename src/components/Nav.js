@@ -4,7 +4,7 @@ import Chat from '../images/chat.png';
 import { db, auth } from '../firebase';
 
 function Nav({ user }) {
-
+    // console.log(user);
     const [isOpen, setIsOpen] = useState(false)
 
     const handleOpenClick = () => {

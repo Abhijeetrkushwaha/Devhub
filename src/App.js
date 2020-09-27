@@ -8,7 +8,8 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import CreateProject from './components/CreateProject';
 import Profile from './components/Profile';
-import Chat from './components/Chat'
+import Chat from './components/Chat';
+import Loader from './components/Loader'
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         // user is logged in...
-        console.log(authUser);
+        // console.log(authUser);
         setUser(authUser);
         setWaitToLoad(true)
 
@@ -38,23 +39,29 @@ function App() {
     }
   }, [user]);
 
-
+// console.log(user && user.uid);
   return (
     <BrowserRouter>
-      <div className="App">
        {
-         waitToLoad && <Nav user={user} />
-       }
-       <Switch>
-         <Route exact path='/' component={Dashboard} />
-         <Route path='/login' component={Login} />
-         <Route path='/signup' component={Signup} />
-         <Route path='/create' component={CreateProject} />
-         <Route path='/profile' component={Profile} />
-         <Route path='/chat' component={Chat} />
-       </Switch>
+         waitToLoad ? (
+          <div className="App">
+          <Nav user={user} />
+          <Switch>
+            {/* <Route exact path='/' user={date} component={Dashboard} /> */}
+            <Route exact path='/' render=
+            { (props) => <Dashboard {...props} user={user} />} />
+            <Route path='/login' component={Login} />
+            <Route path='/signup' component={Signup} />
+            <Route path='/create' component={CreateProject} />
+            <Route path='/profile' component={Profile} />
+            <Route path='/chat' component={Chat} />
+          </Switch>
+          </div>
+         ) : (
+          <Loader />
+         )
+       } 
        {/* <button onClick={() => setAuth(true)}>Click me</button> */}
-      </div>
     </BrowserRouter>
   );
 }
