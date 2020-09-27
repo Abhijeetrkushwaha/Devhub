@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import { Redirect } from 'react-router-dom'
 
-function CreateProject() {
+function CreateProject({ user }) {
 
-    return (
+    const userIsLogin = !user ?   <Redirect to="/signup" /> : (
         <div className="container">
             <form onSubmit={() =>  {}} className="white form z-depth-1">
                 <h5 className="grey-text text-darken-3 center">
@@ -30,6 +31,12 @@ function CreateProject() {
             </form>
         </div>
     )
+    return (
+        <div>
+            { userIsLogin }
+        </div>
+    )
+
 }
 
 export default CreateProject

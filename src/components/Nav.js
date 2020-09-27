@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Chat from '../images/chat.png';
+import Chat from '../images/chat-logo2.png';
 import { db, auth } from '../firebase';
 
 function Nav({ user }) {
@@ -68,10 +68,10 @@ function Nav({ user }) {
         <header>
             <nav className="nav-wrapper purple">
                 <div className="container">
-                    <Link to="/" className="brand-logo hide-on-med-and-down left orange-text">
+                    <Link to="/" className="brand-logo devhub-logo hide-on-med-and-down left white-text">
                         Devhub
                     </Link>
-                    <Link to="/" className="brand-logo hide-on-large-only center orange-text">
+                    <Link to="/" className="brand-logo devhub-logo hide-on-large-only center white-text">
                        Devhub
                     </Link>
                     <div className="menu-icon open left" onClick={handleOpenClick}>

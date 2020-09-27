@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { auth } from '../firebase'
+import { auth } from '../firebase';
+import { Redirect } from 'react-router-dom'
 
 function Login(props) {
+
+    const { user } = props
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [waitSignal, setWaitSignal] = useState('');
@@ -22,8 +25,7 @@ function Login(props) {
           setWaitSignal(err.message)
         })
       }
-
-    return (
+      const userIsLogin = user ?   <Redirect to="/" /> : (
         <div className="container">
             <form onSubmit={signIn} className="white form z-depth-1">
                 <h5 className="grey-text text-darken-3 center">
@@ -42,6 +44,11 @@ function Login(props) {
                     <button className="btn purple">Login</button>
                 </div>
             </form>
+        </div>
+    )
+    return (
+        <div>
+            { userIsLogin }
         </div>
     )
 }

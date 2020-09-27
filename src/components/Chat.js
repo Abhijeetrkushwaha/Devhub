@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router-dom'
 // import Messages from './Messages'
 // import db from '../firebase';
 // import firebase from 'firebase'
 // import Loader from './Loader'
 
-const Chat = () => {
+const Chat = ({ user }) => {
     
     const [input, setInput] = useState('')
-    const [messages, setMessages] = useState([]);
-    const [username, setUser] = useState('');
-    const [id, setId] = useState(null)
+    // const [messages, setMessages] = useState([]);
+    // const [username, setUser] = useState('');
+    // const [id, setId] = useState(null)
 
     // useEffect(() => {
     //     // setUser(prompt("Please enter your name"))
@@ -89,7 +90,7 @@ const Chat = () => {
     // ) : null ;
     // username={username}
 
-    return (
+    const userIsLogin = !user ?   <Redirect to="/signup" /> : (
         <div className="container">
             <form onSubmit={() => {}}>
                 <input className="white-text" type="text" value={input} onChange={() => {}} placeholder="Type a message" />
@@ -98,6 +99,12 @@ const Chat = () => {
             
         </div>
     )
+    return (
+        <div>
+            { userIsLogin }
+        </div>
+    )
+
 }
 
 export default Chat

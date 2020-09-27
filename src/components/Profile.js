@@ -1,19 +1,22 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'
 
-function Profile() {
-    return (
+function Profile({ user }) {
+    const userIsLogin = !user ?   <Redirect to="/signup" /> : (
         <div className="container">
             <div className="section center">
                 <div className="card profile-detail z-depth-0">
                     <h4 className="purple-text">Profile</h4>
                     <div className="avatar">
-                        <h2 className="avatar-name">A</h2>
+                        <h2 className="avatar-name">
+                            {user.displayName.slice(0, 1)}
+                        </h2>
                     </div>
-                    <h5 className="username">Abhijeet Kushwaha</h5>
-                    <p className="purple-text">Get in touch <br/>
+                    <h5 className="username">{user.displayName}</h5>
+                    {/* <p className="purple-text">Get in touch <br/>
                     <span>
                         <a href="#" className="purple-text"><i className="fas fa-external-link-alt"></i></a>
-                    </span></p>
+                    </span></p> */}
                 </div>
             </div>
             <div className="section project-done">
@@ -25,6 +28,11 @@ function Profile() {
                     </div>
                 </div>
             </div>
+        </div>
+    )
+    return (
+        <div>
+            { userIsLogin }
         </div>
     )
 }
