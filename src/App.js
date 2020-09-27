@@ -39,7 +39,7 @@ function App() {
     }
   }, [user]);
 
-// console.log(user && user.uid);
+console.log(user  );
   return (
     <BrowserRouter>
        {
@@ -50,8 +50,10 @@ function App() {
             {/* <Route exact path='/' user={date} component={Dashboard} /> */}
             <Route exact path='/' render=
             { (props) => <Dashboard {...props} user={user} />} />
-            <Route path='/login' component={Login} />
-            <Route path='/signup' component={Signup} />
+            <Route path='/login' render=
+            { (props) => <Login {...props} user={user} />} />
+            <Route path='/signup' render=
+            { (props) => <Signup {...props} user={user} />} />
             <Route path='/create' component={CreateProject} />
             <Route path='/profile' component={Profile} />
             <Route path='/chat' component={Chat} />
