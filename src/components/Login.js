@@ -2,15 +2,10 @@ import React, { useState } from 'react';
 import { auth } from '../firebase'
 
 function Login(props) {
-    const { user } = props;
-    // console.log(user);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [waitSignal, setWaitSignal] = useState('');
 
-    // if(user){
-       
-    // }
     
 
     const signIn = (e) => {
