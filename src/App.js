@@ -15,7 +15,7 @@ function App() {
 
   const [user, setUser] = useState(null);
   const [waitToLoad, setWaitToLoad] = useState(false);
-  const [posts, setPosts] = useState([]);
+  // const [posts, setPosts] = useState([]);
   // const [waitSignal, setWaitSignal] = useState('');
 //  console.log(user);
   useEffect(() => {
