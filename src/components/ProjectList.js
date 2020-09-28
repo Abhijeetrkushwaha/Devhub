@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Chat from '../images/chatapp.png';
+import { Link } from 'react-router-dom'
 import { db } from '../firebase'
 
 const ProjectList = () => {
@@ -35,7 +36,7 @@ const ProjectList = () => {
                 </div>
                     <div className="card-content project-content grey-text text-darken-3">
                         <span className="card-title">{project.title}</span>
-                        <button className="btn-small purple">View</button>
+                        <Link to={"/project/" + id} className="btn-small purple">View</Link>
                     </div>
                 </div>
             </div>

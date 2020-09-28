@@ -81,7 +81,7 @@ img{
   display: flex;
   align-items: center;
   padding: 5px 10px;
-  justify-content: start;
+  justify-content: flex-start;
 }
 .take-to-create{
   margin-top: 8px;

@@ -9,7 +9,8 @@ import Signup from './components/Signup';
 import CreateProject from './components/CreateProject';
 import Profile from './components/Profile';
 import Chat from './components/Chat';
-import Loader from './components/Loader'
+import Loader from './components/Loader';
+import ProjectDetail from './components/ProjectDetail';
 
 function App() {
 
@@ -60,6 +61,8 @@ function App() {
             { (props) => <Profile {...props} user={user} />} />
             <Route path='/chat' render=
             { (props) => <Chat {...props} user={user} />} />
+            <Route path='/project/:id' render=
+            { (props) => <ProjectDetail {...props} user={user} />} />
           </Switch>
           </div>
          ) : (
