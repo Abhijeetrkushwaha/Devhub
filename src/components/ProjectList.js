@@ -9,7 +9,7 @@ const ProjectList = () => {
 
     useEffect(() => {
         db.collection('projects')
-        // .orderBy('timestamp', 'desc')
+        .orderBy('timestamp', 'desc')
         .onSnapshot(snapshot =>{
             setProjects(snapshot.docs.map(doc => (
               {project: doc.data(), id: doc.id}
@@ -31,7 +31,7 @@ const ProjectList = () => {
                     <p className="grey-text">24th September, 10am</p>
                 </div>
                 <div className="post__image">
-                    <img src={Chat} alt="Technical issue or slow net speed"/> 
+                    <img src={project.imageUrl} alt="Technical issue or slow net speed"/> 
                 </div>
                     <div className="card-content project-content grey-text text-darken-3">
                         <span className="card-title">{project.title}</span>

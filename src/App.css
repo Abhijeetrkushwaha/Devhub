@@ -167,6 +167,12 @@ textarea:not(.browser-default):focus:not([readonly]){
   margin-left: 20px;
 }
 /* Profile */
+/* CreateProject */
+.progress-bar{
+  width: 100%;
+  color: purple;
+}
+/* CreateProject */
 
 @media screen and (max-width: 900px){
   /* Nav.js */
