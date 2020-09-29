@@ -53,6 +53,7 @@ function CreateProject({ user, history }) {
                         content: content,
                         imageUrl: url,
                         projectLink: projectLink,
+                        getInTouch: user.photoURL,
                     });
                     setProgress(0);
                     setTitle('');

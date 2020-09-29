@@ -13,10 +13,7 @@ function Profile({ user }) {
                         </h2>
                     </div>
                     <h5 className="username">{user.displayName}</h5>
-                    {/* <p className="purple-text">Get in touch <br/>
-                    <span>
-                        <a href="#" className="purple-text"><i className="fas fa-external-link-alt"></i></a>
-                    </span></p> */}
+                    
                 </div>
             </div>
             <div className="section project-done">

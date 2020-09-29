@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Chat from '../images/chatapp.png';
 import { Link } from 'react-router-dom'
-import { db } from '../firebase'
+import { db } from '../firebase';
+import moment from 'moment'
 
 const ProjectList = () => {
 
@@ -29,7 +30,7 @@ const ProjectList = () => {
                         <Avatar className="info__img" alt={project.username} src='/img' />
                         <p className="username">{project.username}</p>
                     </div>
-                    <p className="grey-text">24th September, 10am</p>
+                    <p className="grey-text">{project.timestamp && moment(project.timestamp.toDate()).calendar()}</p>
                 </div>
                 <div className="post__image">
                     <img src={project.imageUrl} alt="Technical issue or slow net speed"/> 
