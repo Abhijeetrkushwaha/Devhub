@@ -13,7 +13,7 @@ function Profile({ user }) {
                         </h2>
                     </div>
                     <h5 className="username">{user.displayName}</h5>
-                    
+                    <h6>Email: {user.email}</h6>
                 </div>
             </div>
             <div className="section project-done">

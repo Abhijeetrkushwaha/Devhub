@@ -13,6 +13,9 @@ function ProjectDetail(props) {
     console.log(user);
 
     const [projects, setProjects] = useState([]);
+    const [comments, setComments] = useState([]);
+    const [comment, setComment] = useState("");
+
 
     useEffect(() => {
         db.collection('projects')
@@ -23,7 +26,19 @@ function ProjectDetail(props) {
         })
       }, [] )
 
-      
+      useEffect(() => {
+          if(props.match.params.id) {
+              db
+              .collection("projects")
+              .doc(props.match.params.id)
+              .collection("comments")
+              .onSnapshot((snapshot) => {
+                  setComments(snapshot.docs.map((doc) => doc.data()));
+              })
+          }
+      }, [props.match.params.id])
+
+      console.log(comments);
 
     const mainProject = projects.length ? (
         projects.find(project => {
@@ -32,6 +47,10 @@ function ProjectDetail(props) {
     ) : (null)
 
     console.log(projects && mainProject);
+
+    const addComment = (e) => {
+        
+    }
 
     const userIsLogin = !user ?   <Redirect to="/signup" /> : (
         // <div className="container">
@@ -79,15 +98,16 @@ function ProjectDetail(props) {
                     <div className="project-comment">
                         <form>
                             <div className="project-comment-form">
-                                <input type="text" placeholder="Add comment"/>
-                                <button className="btn-small white purple-text">Add</button>
+                                <input type="text" placeholder="Add a comment" value={comment} onChange={(e) => setComment(e.target.value)}/>
+                                <button className="btn-small white purple-text" disabled={!comment} onClick={addComment}>Add</button>
                             </div>
                         </form>
                     </div>
                     <div className="comments">
+
+                        {/* <p><span className="purple-text">Abhijeet: </span>Lorem ipsum dolor sit amet.</p>
                         <p><span className="purple-text">Abhijeet: </span>Lorem ipsum dolor sit amet.</p>
-                        <p><span className="purple-text">Abhijeet: </span>Lorem ipsum dolor sit amet.</p>
-                        <p><span className="purple-text">Abhijeet: </span>Lorem ipsum dolor sit amet.</p>
+                        <p><span className="purple-text">Abhijeet: </span>Lorem ipsum dolor sit amet.</p> */}
                     </div>
                 </div>
                 
