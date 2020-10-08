@@ -49,6 +49,7 @@ function CreateProject({ user, history }) {
                     db.collection("projects").add({
                         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                         username: user.displayName,
+                        userId: user.uid,
                         title: title,
                         content: content,
                         imageUrl: url,

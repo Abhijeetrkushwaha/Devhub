@@ -4,7 +4,8 @@ import { Redirect } from 'react-router-dom'
 function Profile({ user }) {
     const userIsLogin = !user ?   <Redirect to="/signup" /> : (
         <div className="container">
-            <div className="section center">
+            <div className="row">
+            <div className="section center col s12 m12 l6">
                 <div className="card profile-detail z-depth-0">
                     <h4 className="purple-text">Profile</h4>
                     <div className="avatar">
@@ -16,7 +17,7 @@ function Profile({ user }) {
                     <h6>Email: {user.email}</h6>
                 </div>
             </div>
-            <div className="section project-done">
+            <div className="section project-done col s12 m12 l6">
                 <h4 >Projects</h4>
                 <div className="card">
                     <div className="card-content project-done-no">
@@ -24,6 +25,7 @@ function Profile({ user }) {
                         <button className="btn purple">View</button>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     )

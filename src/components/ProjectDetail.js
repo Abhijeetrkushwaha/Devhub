@@ -10,7 +10,7 @@ function ProjectDetail(props) {
 
     const { user } = props
     // console.log(props);
-    console.log(user);
+    // console.log(user);
 
     const [projects, setProjects] = useState([]);
     const [comments, setComments] = useState([]);
@@ -93,7 +93,7 @@ function ProjectDetail(props) {
                     </div>
                     <img src={mainProject && mainProject.project.imageUrl} alt="Technical issue or slow net speed"/>
                     <span className="card-title">Project Title - {mainProject && mainProject.project.title}</span>
-                    <p>{mainProject && mainProject.project.content}</p><br/>
+                    <p><span className="text-purple">Description:</span> {mainProject && mainProject.project.content}</p><br/>
                     {mainProject && <a href={mainProject.project.projectLink} target="blank"  className="btn purple">View</a>}
                     <div className="project-comment">
                         <form>
@@ -111,11 +111,6 @@ function ProjectDetail(props) {
                     </div>
                 </div>
                 
-                <div className="card-action grey lighten-4 grey-text">
-                    <div className="project-time">
-                        22 september 2020
-                    </div>
-                </div>
             </div>
         </div>
     )

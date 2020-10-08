@@ -201,6 +201,21 @@ textarea:not(.browser-default):focus:not([readonly]){
   margin-bottom: 10px;
 } */
 
+.project-content{
+  display: flex;
+  flex-direction: column;
+}
+.project-content span{
+  font-weight: 600 !important;
+}
+.card .card-content{
+  padding: 5px 10px 5px;
+}
+.view-pro{
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
 /* ProjectDetail */
 @media screen and (max-width: 900px){
   /* Nav.js */
