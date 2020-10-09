@@ -223,6 +223,47 @@ textarea:not(.browser-default):focus:not([readonly]){
   margin-bottom: 10px;
 }
 /* Profile */
+
+/* Chat.js */
+.message{
+  width: fit-content;
+  max-width: 200px;
+  padding: 0 10px;
+}
+.message span{
+  color: black;
+}
+.message-content{
+  padding: 2px 20px;
+  margin: 0;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+.message-user{
+  margin-left: auto;
+  color: white;
+  text-align: left !important;
+}
+
+.message-user-card{
+  background-color: purple !important;
+  text-align: right;
+}
+
+.message-guest-card{
+  background-color: rgb(221, 221, 221) !important;
+  color: purple;
+}
+
+.user-right{
+  float: right;
+  margin-right: 5px;
+  color: white;
+}
+.all-msg{
+  margin-top: 20px;
+}
+/* Chat.js */
 @media screen and (max-width: 900px){
   /* Nav.js */
   .nav-list{

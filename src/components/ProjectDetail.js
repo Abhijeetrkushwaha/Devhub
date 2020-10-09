@@ -121,7 +121,7 @@ function ProjectDetail(props) {
                                 return (
                                     <div key={Math.random()}>
                                         <h6><span className="purple-text">{comment.username}: </span>{comment.text}</h6>
-                                        <p>{comment.timestamp && moment(comment.timestamp.toDate()).calendar()}</p>
+                                        <p>{comment.timestamp && moment(comment.timestamp.toDate()).fromNow()}</p>
                                     </div>
                                 )
                             })

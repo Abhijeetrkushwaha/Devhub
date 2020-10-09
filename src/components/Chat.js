@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom'
 // import Messages from './Messages'
-// import db from '../firebase';
-// import firebase from 'firebase'
+import { db } from '../firebase';
+import firebase from 'firebase';
+import moment from 'moment';
 // import Loader from './Loader'
 
 const Chat = ({ user }) => {
     
     const [input, setInput] = useState('')
-    // const [messages, setMessages] = useState([]);
+    const [messages, setMessages] = useState([]);
     // const [username, setUser] = useState('');
     // const [id, setId] = useState(null)
 
@@ -40,30 +41,32 @@ const Chat = ({ user }) => {
 
     // }, [])
 
-    // useEffect(() => {
-    //     db.collection('messages')
-    //     .orderBy('timestamp', 'desc')
-    //     .onSnapshot(snapshot =>{
-    //         setMessages(snapshot.docs.map(doc => doc.data()))
-    //     })
-    // }, [] )
+    useEffect(() => {
+        db.collection('messages')
+        .orderBy('timestamp', 'desc')
+        .onSnapshot(snapshot =>{
+            setMessages(snapshot.docs.map(doc => doc.data()))
+        })
+    }, [] )
 
-    // const sendMessage = (e) => {
+    const sendMessage = (e) => {
 
-    //     e.preventDefault()
-    //     if(input.trim().length > 0){
-    //         setMessages([...messages, {username: username, text: input, id: id}])
-    //         db.collection('messages').add({
-    //             text: input,
-    //             username: username,
-    //             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    //             id: id
-    //         })
-    //     setInput('')
-    //     } else {
-    //         setInput('')
-    //     }
-    // }
+        e.preventDefault()
+        if(input.trim().length > 0){
+            // setMessages([...messages, {username: username, text: input, id: id}])
+            db.collection('messages').add({
+                text: input,
+                username: user.displayName,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                id: user.uid
+            })
+        setInput('')
+        } else {
+            setInput('')
+        }
+        console.log(messages);
+        // console.log("hi");
+    }
 
     // const handleChange = (e) => {
     //     let localData = JSON.parse(localStorage.getItem("USERNAME"))
@@ -75,33 +78,37 @@ const Chat = ({ user }) => {
     //     }
     // }
 
-    // const text = messages.length ? (
-    //     messages.map((message) => {
-    //         return (
-    //             // <div className={`message ${isId && 'message-user'}`}>
-    //             //     <span className={isId ? "user-right" : "user-left"}>{message.username }</span> <br/>
-    //             //     <p className={`message-content ${isId ? "message-user-card" : 'message-guest-card'}`}>
-    //             //         {message.text}
-    //             //     </p>
-    //             // </div>
-    //             <h1>hi</h1>
-    //         )
-    //     })
-    // ) : null ;
+    const text = messages.length ? (
+        messages.map((message) => {
+            return (
+                <div className={`message ${user.uid === message.id && 'message-user'}`} key={Math.random()}>
+                    <span className={user.uid === message.id ? "user-right" : "user-left"}>{message.username }</span> <br/>
+                    <p className={`message-content ${user.uid === message.id ? "message-user-card" : 'message-guest-card'}`}>
+                        {message.text} <br/>
+                        <span className="chat-time">{message.timestamp && moment(message.timestamp.toDate()).fromNow()}</span>
+                    </p>
+                    
+                </div>
+            )
+        })
+    ) : null ;
     // username={username}
 
     const userIsLogin = !user ?   <Redirect to="/signup" /> : (
-        <div className="container">
-            <form onSubmit={() => {}}>
-                <input className="white-text" type="text" value={input} onChange={() => {}} placeholder="Type a message" />
+        <div className="container chat-container">
+            <form onSubmit={sendMessage} className="chat-form">
+                <input className="black-text" type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type a message" />
                 <button disabled={!input} className="btn-small btn-style z-depth-1 black">Send</button>
             </form>
-            
+            <div className="all-msg">
+            { text }
+            </div>
         </div>
     )
     return (
         <div>
             { userIsLogin }
+            
         </div>
     )
 
