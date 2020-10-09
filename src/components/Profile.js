@@ -1,7 +1,44 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
+import { db } from '../firebase';
 
-function Profile({ user }) {
+function Profile({ user }) { 
+
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    db.collection('projects')
+    .onSnapshot(snapshot =>{
+        setProjects(snapshot.docs.map(doc => (
+          {project: doc.data(), id: doc.id}
+          )))
+      })
+    }, [] )
+
+    // console.log(projects);
+
+    const mainProject = projects.length ? (
+      projects.filter(project => {
+          return project.project.userId === user.uid
+      })
+  ) : (null)
+
+  // console.log(mainProject);
+  const newProject = mainProject && mainProject.length ? (
+    mainProject.map((project) => {
+      return (
+        <div className="card" key={project.id}>
+        <div className="card-content project-done-no">
+          <div className="card-title">Title: { project.project.title }</div>
+        </div>
+        
+        </div>
+      )
+    })
+  ) : (
+    null
+  )
+
     const userIsLogin = !user ?   <Redirect to="/signup" /> : (
         <div className="container">
             <div className="row">
@@ -18,13 +55,19 @@ function Profile({ user }) {
                 </div>
             </div>
             <div className="section project-done col s12 m12 l6">
-                <h4 >Projects</h4>
-                <div className="card">
-                    <div className="card-content project-done-no">
-                        <div className="card-title">Project 1</div>
-                        <button className="btn purple">View</button>
-                    </div>
-                </div>
+                <h4>Projects</h4>
+                {
+                  mainProject && mainProject.length === 0 ? (
+                    <h3>Haven't created any project</h3>
+                  ) : null
+                }
+                    
+                    {
+                       newProject
+                    }
+                        
+                    
+                
             </div>
             </div>
         </div>

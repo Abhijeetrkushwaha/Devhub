@@ -217,6 +217,12 @@ textarea:not(.browser-default):focus:not([readonly]){
 }
 
 /* ProjectDetail */
+
+/* Profile */
+.project-done-no{
+  margin-bottom: 10px;
+}
+/* Profile */
 @media screen and (max-width: 900px){
   /* Nav.js */
   .nav-list{
@@ -253,6 +259,7 @@ textarea:not(.browser-default):focus:not([readonly]){
   }
   /* Nav.js */
 }
+
 @media screen and (max-width: 600px){
   /* Nav.js */
   .msg-sm{

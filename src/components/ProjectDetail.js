@@ -3,7 +3,8 @@ import { Redirect } from 'react-router-dom';
 import { db } from '../firebase';
 import Chat from '../images/chatapp.png';
 import Avatar from '@material-ui/core/Avatar';
-import moment from 'moment'
+import moment from 'moment';
+import firebase from 'firebase';
 
 
 function ProjectDetail(props) {
@@ -32,13 +33,14 @@ function ProjectDetail(props) {
               .collection("projects")
               .doc(props.match.params.id)
               .collection("comments")
+              .orderBy('timestamp', 'desc')
               .onSnapshot((snapshot) => {
                   setComments(snapshot.docs.map((doc) => doc.data()));
               })
           }
       }, [props.match.params.id])
 
-      console.log(comments);
+    //   console.log(comments);
 
     const mainProject = projects.length ? (
         projects.find(project => {
@@ -46,10 +48,20 @@ function ProjectDetail(props) {
         })
     ) : (null)
 
-    console.log(projects && mainProject);
+    // console.log(projects && mainProject);
 
     const addComment = (e) => {
+        e.preventDefault()
+        if(comment.trim().length > 0){
+            db.collection("projects").doc(props.match.params.id)
+            .collection("comments").add({
+                text: comment,
+                username: user.displayName,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            })
+        }
         
+        setComment('');
     }
 
     const userIsLogin = !user ?   <Redirect to="/signup" /> : (
@@ -104,8 +116,17 @@ function ProjectDetail(props) {
                         </form>
                     </div>
                     <div className="comments">
-
-                        {/* <p><span className="purple-text">Abhijeet: </span>Lorem ipsum dolor sit amet.</p>
+                        {
+                            comments.map((comment) => {
+                                return (
+                                    <div key={Math.random()}>
+                                        <h6><span className="purple-text">{comment.username}: </span>{comment.text}</h6>
+                                        <p>{comment.timestamp && moment(comment.timestamp.toDate()).calendar()}</p>
+                                    </div>
+                                )
+                            })
+                        }
+                        {/* 
                         <p><span className="purple-text">Abhijeet: </span>Lorem ipsum dolor sit amet.</p>
                         <p><span className="purple-text">Abhijeet: </span>Lorem ipsum dolor sit amet.</p> */}
                     </div>
