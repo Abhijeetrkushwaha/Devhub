@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { db } from '../firebase';
-import Chat from '../images/chatapp.png';
+// import Chat from '../images/chatapp.png';
 import Avatar from '@material-ui/core/Avatar';
 import moment from 'moment';
 import firebase from 'firebase';
@@ -99,14 +99,14 @@ function ProjectDetail(props) {
                             <Avatar className="info__img" alt={mainProject && mainProject.project.username} src='/img' />
                             <p className="username">{mainProject && mainProject.project.username}</p>
                         </div>
-                        <p className="purple-text">Get in touch <span className="project-detail-get-touch">
-                            {mainProject && <a href={mainProject.project.getInTouch} target="blank" className="purple-text"><i className="fas fa-external-link-alt"></i></a>}
+                        <p className="purple-text"><span className="project-detail-get-touch">
+                            {mainProject && <a href={mainProject.project.getInTouch} target="blank" className="purple-text">Get in touch <i className="fas fa-external-link-alt"></i></a>}
                         </span></p>
                     </div>
                     <img src={mainProject && mainProject.project.imageUrl} alt="Technical issue or slow net speed"/>
                     <span className="card-title">Project Title - {mainProject && mainProject.project.title}</span>
                     <p><span className="text-purple">Description:</span> {mainProject && mainProject.project.content}</p><br/>
-                    {mainProject && <a href={mainProject.project.projectLink} target="blank"  className="btn purple">View</a>}
+                    {mainProject && <a href={mainProject.project.projectLink} target="blank"  className="btn purple">Preview Live</a>}
                     <div className="project-comment">
                         <form>
                             <div className="project-comment-form">

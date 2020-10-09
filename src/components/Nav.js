@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Chat from '../images/chat-logo2.png';
-import { db, auth } from '../firebase';
+import { auth } from '../firebase';
 
 function Nav({ user }) {
     // console.log(user);

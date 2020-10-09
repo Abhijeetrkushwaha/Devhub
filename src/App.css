@@ -41,6 +41,12 @@ img{
     transform: scale(.5) rotate(360deg);
   }
 }
+.preloader{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 /* loader */
 /* Nav.js */
@@ -172,6 +178,15 @@ textarea:not(.browser-default):focus:not([readonly]){
   width: 100%;
   color: purple;
 }
+.file-field .btn-small{
+  height: 2rem;
+  line-height: 2rem;
+  margin-top: 1rem;
+}
+.file-path{
+  border-color: purple !important;
+  box-shadow: none !important;
+}
 /* CreateProject */
 /* ProjectDetail */
 .project-detail{
@@ -203,7 +218,7 @@ textarea:not(.browser-default):focus:not([readonly]){
 
 .project-content{
   display: flex;
-  flex-direction: column;
+  align-items: center;
 }
 .project-content span{
   font-weight: 600 !important;

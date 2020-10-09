@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Avatar from "@material-ui/core/Avatar";
-import Chat from "../images/chatapp.png";
+// import Chat from "../images/chatapp.png";
 import { Link } from "react-router-dom";
 import { db } from "../firebase";
 import moment from "moment";
@@ -37,19 +37,17 @@ const ProjectList = () => {
             />
           </div>
           <div className="card-content project-content grey-text text-darken-3">
-            <span className="card-title">Title: {project.title}</span>
-          </div>
-        <div className="view-pro">
-        <Link to={"/project/" + id} className="btn-small purple">
-                View
+            <span className="card-title black-text">Title: {project.title}</span>
+            <Link to={"/project/" + id} className="btn-small purple">
+              View
             </Link>
-        </div>
+          </div>
           <div className="card-action grey lighten-4 grey-text">
-                <div className="project-time">
-                {project.timestamp &&
+            <div className="project-time">
+              {project.timestamp &&
                 moment(project.timestamp.toDate()).calendar()}
-                </div>
             </div>
+          </div>
         </div>
       </div>
     );
