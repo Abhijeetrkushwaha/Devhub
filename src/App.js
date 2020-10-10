@@ -11,6 +11,7 @@ import Profile from './components/Profile';
 import Chat from './components/Chat';
 import Loader from './components/Loader';
 import ProjectDetail from './components/ProjectDetail';
+import NotificationWindow from './components/NotificationWindow';
 
 function App() {
 
@@ -64,6 +65,7 @@ function App() {
             { (props) => <Chat {...props} user={user} />} />
             <Route path='/project/:id' render=
             { (props) => <ProjectDetail {...props} user={user} />} />
+            <Route path='/notifications' component={NotificationWindow} />
           </Switch>
           </div>
          ) : (

@@ -26,6 +26,9 @@ function Nav({ user }) {
        <li>
            <Link to="/profile" onClick={() => setIsOpen(false)}>Profile</Link>
        </li>
+       <li className="hide-on-large-only">
+           <Link to="/notifications" onClick={() => setIsOpen(false)}>Notifications</Link>
+       </li>
        <li>
            <Link to="/" onClick={() => {
                auth.signOut()
