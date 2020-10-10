@@ -37,7 +37,7 @@ const ProjectList = () => {
             />
           </div>
           <div className="card-content project-content grey-text text-darken-3">
-            <span className="card-title black-text">Title: {project.title}</span>
+            <span className="card-title black-text">{project.title}</span>
             <Link to={"/project/" + id} className="btn-small purple">
               View
             </Link>

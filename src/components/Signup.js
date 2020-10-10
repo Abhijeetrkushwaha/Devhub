@@ -59,7 +59,7 @@ function Signup(props) {
                     <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 <div className="input-field">
-                    <label htmlFor="social-link">Social Link (optional)</label>
+                    <label htmlFor="social-link">Social Link</label>
                     <input type="text" id="social-link" value={link} onChange={(e) => setLink(e.target.value)}/>
                     <p className="grey-text">Let us know any social media link, so that everyone can connect with you.</p>
                 </div>
