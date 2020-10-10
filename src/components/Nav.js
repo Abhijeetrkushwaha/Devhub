@@ -26,7 +26,7 @@ function Nav({ user }) {
         <div className="developer-img">
             <img src={Abhijeet} alt=""/>
         </div>
-        <h5>Develop with ❤️ by</h5>
+        <h5>Develop with <span role="img" aria-label="love">❤️</span> by</h5>
         <h4><a href="https://abhijeetkwh.me/" className="white-text">Abhijeet Kushwaha</a></h4>
         <ul className="social-icon">
           <li>
@@ -101,7 +101,7 @@ function Nav({ user }) {
         <div className="developer-img">
             <img src={Abhijeet} alt=""/>
         </div>
-        <h5>Develop with ❤️ by</h5>
+        <h5>Develop with <span role="img" aria-label="love">❤️</span> by</h5>
         <h4><a href="https://abhijeetkwh.me/" className="white-text">Abhijeet Kushwaha</a></h4>
         <ul className="social-icon">
           <li>
