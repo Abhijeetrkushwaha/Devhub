@@ -72,6 +72,40 @@ img{
 .devhub-logo{
   font-family: 'Pacifico', cursive;
 }
+.social-icon{
+  display: flex;
+}
+.social-icon li{
+  margin-top: 0 !important;
+  padding: 0;
+  height: 25px;
+}
+.social-icon li a{
+  line-height: 25px;
+}
+.developer-img{
+  position: relative;
+  width: 60px;
+  margin: 0 auto;
+}
+.developer-img img{
+  border-radius: 50%;
+  position: relative;
+  top: 25px;
+}
+.social-media h5{
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  margin-top: 5px;
+  color: black;
+}
+.social-media h4{
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
 /* Nav.js */
 
 /* Dashboard */
@@ -119,6 +153,10 @@ img{
 .project-content{
   display: flex;
   justify-content: space-between;
+}
+.post__image img{
+  border-bottom: 2px solid rgb(199, 199, 199);
+  border-top: 2px solid rgb(199, 199, 199);
 }
 /* Dashboard */
 
@@ -295,7 +333,7 @@ textarea:not(.browser-default):focus:not([readonly]){
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
   }
   .nav-list li{
-    margin-top: 50px;
+    margin-top: 30px;
     width: 100%;
   }
   .menu-icon{

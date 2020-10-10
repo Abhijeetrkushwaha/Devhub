@@ -56,7 +56,7 @@ function CreateProject({ user, history }) {
                 getInTouch: user.photoURL,
               });
               db.collection('notifications').add({
-                text: `${user.displayName} just created a project`,
+                text: `${user.displayName} created a project`,
                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),
               })
               setProgress(0);
