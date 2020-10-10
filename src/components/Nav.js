@@ -22,40 +22,50 @@ function Nav({ user }) {
         <i className="fas fa-times"></i>
       </div>
       <li className="hide-on-large-only">
-      <div className="social-media">
-        <div className="developer-img">
-            <img src={Abhijeet} alt=""/>
+        <div className="social-media">
+          <div className="developer-img">
+            <img src={Abhijeet} alt="" />
+          </div>
+          <h5>
+            Develop with{" "}
+            <span role="img" aria-label="love">
+              ❤️
+            </span>{" "}
+            by
+          </h5>
+          <h4>
+            <a href="https://abhijeetkwh.me/" className="white-text">
+              Abhijeet Kushwaha
+            </a>
+          </h4>
+          <ul className="social-icon">
+            <li>
+              <a href="https://github.com/Abhijeetrkushwaha">
+                <i className="fab fa-github"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/Abhijeetkwh">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/abhijeet.kushwaha.1800">
+                <i className="fab fa-facebook-square"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/abhijeetkwh/">
+                <i className="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/abhijeet-kushwaha-1882a41a5/">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
         </div>
-        <h5>Develop with <span role="img" aria-label="love">❤️</span> by</h5>
-        <h4><a href="https://abhijeetkwh.me/" className="white-text">Abhijeet Kushwaha</a></h4>
-        <ul className="social-icon">
-          <li>
-            <a href="https://github.com/Abhijeetrkushwaha">
-              <i className="fab fa-github"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/Abhijeetkwh">
-              <i className="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/abhijeet.kushwaha.1800">
-              <i className="fab fa-facebook-square"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/abhijeetkwh/">
-              <i className="fab fa-instagram"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/abhijeet-kushwaha-1882a41a5/">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
       </li>
       <li>
         <Link to="/create" onClick={() => setIsOpen(false)}>
@@ -97,40 +107,50 @@ function Nav({ user }) {
         <i className="fas fa-times"></i>
       </div>
       <li className="hide-on-large-only">
-      <div className="social-media">
-        <div className="developer-img">
-            <img src={Abhijeet} alt=""/>
+        <div className="social-media">
+          <div className="developer-img">
+            <img src={Abhijeet} alt="" />
+          </div>
+          <h5>
+            Develop with{" "}
+            <span role="img" aria-label="love">
+              ❤️
+            </span>{" "}
+            by
+          </h5>
+          <h4>
+            <a href="https://abhijeetkwh.me/" className="white-text">
+              Abhijeet Kushwaha
+            </a>
+          </h4>
+          <ul className="social-icon">
+            <li>
+              <a href="https://github.com/Abhijeetrkushwaha">
+                <i className="fab fa-github"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/Abhijeetkwh">
+                <i className="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/abhijeet.kushwaha.1800">
+                <i className="fab fa-facebook-square"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/abhijeetkwh/">
+                <i className="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/abhijeet-kushwaha-1882a41a5/">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
         </div>
-        <h5>Develop with <span role="img" aria-label="love">❤️</span> by</h5>
-        <h4><a href="https://abhijeetkwh.me/" className="white-text">Abhijeet Kushwaha</a></h4>
-        <ul className="social-icon">
-          <li>
-            <a href="https://github.com/Abhijeetrkushwaha">
-              <i className="fab fa-github"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/Abhijeetkwh">
-              <i className="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/abhijeet.kushwaha.1800">
-              <i className="fab fa-facebook-square"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/abhijeetkwh/">
-              <i className="fab fa-instagram"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/abhijeet-kushwaha-1882a41a5/">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
       </li>
       <li>
         <Link to="/login" onClick={() => setIsOpen(false)}>
