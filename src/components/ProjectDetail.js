@@ -105,7 +105,7 @@ function ProjectDetail(props) {
                     </div>
                     <img src={mainProject && mainProject.project.imageUrl} alt="Technical issue or slow net speed"/>
                     <span className="card-title">Project Title - {mainProject && mainProject.project.title}</span>
-                    <p><span className="text-purple">Description:</span> {mainProject && mainProject.project.content}</p><br/>
+                    <p><span className="purple-text">Description:</span> <br/> {mainProject && mainProject.project.content}</p><br/>
                     {mainProject && <a href={mainProject.project.projectLink} target="blank"  className="btn purple">Preview Live</a>}
                     <div className="project-comment">
                         <form>

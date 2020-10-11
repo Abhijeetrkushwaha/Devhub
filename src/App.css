@@ -222,8 +222,8 @@ textarea:not(.browser-default):focus:not([readonly]){
   color: purple;
 }
 .file-field .btn-small{
-  height: 2rem;
-  line-height: 2rem;
+  height: 2.2rem;
+  line-height: 2.2rem;
   margin-top: 1rem;
 }
 .file-path{
