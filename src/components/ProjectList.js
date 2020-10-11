@@ -29,6 +29,9 @@ const ProjectList = () => {
               <Avatar className="info__img" alt={project.username} src="/img" />
               <p className="username">{project.username}</p>
             </div>
+            <div className="more-icon">
+              <i className="fas fa-ellipsis-v grey-text"></i>
+            </div>
           </div>
           <div className="post__image">
             <img

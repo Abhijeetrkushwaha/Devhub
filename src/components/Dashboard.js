@@ -13,7 +13,7 @@ function Dashboard({ user }) {
                 <Link to="/create" className="take-to-create">Create a project</Link>
             </div>
             <div className="row">
-                <div className="col s12 m12 l6">
+                <div className="col s12 m12 l6 no-mg">
                     <ProjectList />
                 </div>
                 <div className="col s12 m12 l5 offset-l1 hide-on-med-and-down">

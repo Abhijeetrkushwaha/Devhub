@@ -123,7 +123,7 @@ img{
   display: flex;
   align-items: center;
   padding: 5px 10px;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .take-to-create{
   margin-top: 8px;
@@ -136,7 +136,6 @@ img{
   width: 100%;
   max-width: 200px;
   margin-left: 10px;
-  border-radius: 10px;
 }
 .user-info{
   display: flex;
@@ -156,9 +155,13 @@ img{
   display: flex;
   justify-content: space-between;
 }
-.post__image img{
-  border-bottom: 2px solid rgb(199, 199, 199);
-  border-top: 2px solid rgb(199, 199, 199);
+
+.no-mg{
+  padding: 0 !important;
+}
+.more-icon{
+  font-size: 20px;
+  margin-right: 10px;
 }
 /* Dashboard */
 
@@ -262,6 +265,7 @@ textarea:not(.browser-default):focus:not([readonly]){
 }
 .project-content span{
   font-weight: 600 !important;
+  margin-bottom: 0;
 }
 .card .card-content{
   padding: 5px 10px 5px;
@@ -301,8 +305,8 @@ textarea:not(.browser-default):focus:not([readonly]){
 }
 
 .message-user-card{
-  background-color: purple !important;
-  text-align: right;
+  background-color: #9C27B0 !important;
+  text-align: left;
 }
 
 .message-guest-card{

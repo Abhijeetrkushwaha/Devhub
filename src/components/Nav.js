@@ -34,23 +34,23 @@ function Nav({ user }) {
             by
           </h5>
           <h4>
-            <a href="https://abhijeetkwh.me/" className="white-text">
+            <a href="https://abhijeetkwh.me/" target="blank" className="white-text">
               Abhijeet Kushwaha
             </a>
           </h4>
           <ul className="social-icon">
             <li>
-              <a href="https://github.com/Abhijeetrkushwaha">
+              <a href="https://github.com/Abhijeetrkushwaha" target="blank">
                 <i className="fab fa-github"></i>
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/Abhijeetkwh">
+              <a href="https://twitter.com/Abhijeetkwh" target="blank">
                 <i className="fab fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.facebook.com/abhijeet.kushwaha.1800">
+              <a href="https://www.facebook.com/abhijeet.kushwaha.1800" target="blank">
                 <i className="fab fa-facebook-square"></i>
               </a>
             </li>
@@ -60,12 +60,17 @@ function Nav({ user }) {
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/abhijeet-kushwaha-1882a41a5/">
+              <a href="https://www.linkedin.com/in/abhijeet-kushwaha-1882a41a5/" target="blank">
                 <i className="fab fa-linkedin-in"></i>
               </a>
             </li>
           </ul>
         </div>
+      </li>
+      <li>
+        <Link to="/" onClick={() => setIsOpen(false)}>
+          Home
+        </Link>
       </li>
       <li>
         <Link to="/create" onClick={() => setIsOpen(false)}>
@@ -119,33 +124,33 @@ function Nav({ user }) {
             by
           </h5>
           <h4>
-            <a href="https://abhijeetkwh.me/" className="white-text">
+            <a href="https://abhijeetkwh.me/" className="white-text" target="blank">
               Abhijeet Kushwaha
             </a>
           </h4>
           <ul className="social-icon">
             <li>
-              <a href="https://github.com/Abhijeetrkushwaha">
+              <a href="https://github.com/Abhijeetrkushwaha" target="blank">
                 <i className="fab fa-github"></i>
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/Abhijeetkwh">
+              <a href="https://twitter.com/Abhijeetkwh" target="blank">
                 <i className="fab fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.facebook.com/abhijeet.kushwaha.1800">
+              <a href="https://www.facebook.com/abhijeet.kushwaha.1800" target="blank">
                 <i className="fab fa-facebook-square"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/abhijeetkwh/">
+              <a href="https://www.instagram.com/abhijeetkwh/" target="blank">
                 <i className="fab fa-instagram"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/abhijeet-kushwaha-1882a41a5/">
+              <a href="https://www.linkedin.com/in/abhijeet-kushwaha-1882a41a5/" target="blank">
                 <i className="fab fa-linkedin-in"></i>
               </a>
             </li>
