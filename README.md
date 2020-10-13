@@ -1,4 +1,4 @@
-# Chat application
+# Devhub application
  Devhub(A Social Platform for developers)
 
 Applink : [Devhub](https://devhub-dev.vercel.app/)
