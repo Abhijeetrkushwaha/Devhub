@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 function Dashboard({ user }) {
     // console.log(user && user.uid);
     const userIsLogin = !user ?   <Redirect to="/signup" /> : (
-        <div className="dashboard">
+        <div className="dashboard p-top">
             <div className="welcome-greeting center">
                 <h5><span className="purple-text">Welcome </span>{user.displayName}</h5>
                 <Link to="/create" className="take-to-create">Create a project</Link>

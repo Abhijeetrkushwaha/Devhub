@@ -3,7 +3,7 @@ import Notification from './Notification';
 
 function NotificationWindow() {
     return (
-        <div>
+        <div className="p-top">
             <Notification />
         </div>
     )

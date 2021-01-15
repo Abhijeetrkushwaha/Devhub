@@ -180,7 +180,7 @@ function Nav({ user }) {
 
   return (
     <header>
-      <nav className="nav-wrapper purple">
+      <nav className="nav-wrapper purple nav-position">
         <div className="container">
           <Link
             to="/"

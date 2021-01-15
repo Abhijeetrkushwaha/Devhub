@@ -40,7 +40,7 @@ function Profile({ user }) {
   )
 
     const userIsLogin = !user ?   <Redirect to="/signup" /> : (
-        <div className="container">
+        <div className="container p-top">
             <div className="row">
             <div className="section center col s12 m12 l6">
                 <div className="card profile-detail z-depth-1">

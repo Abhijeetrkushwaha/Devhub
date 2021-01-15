@@ -133,7 +133,7 @@ const Chat = ({ user }) => {
   const userIsLogin = !user ? (
     <Redirect to="/signup" />
   ) : (
-    <div className="container chat-container">
+    <div className="container chat-container p-top">
       <form onSubmit={sendMessage} className="chat-form">
         <input
           className="black-text"

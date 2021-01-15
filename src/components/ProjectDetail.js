@@ -91,7 +91,7 @@ function ProjectDetail(props) {
         //     </div>
         // </div>
 
-        <div className="section project-detail">
+        <div className="section project-detail p-top">
             <div className="card">
                 <div className="card-content">
                     <div className="user-info">

@@ -41,7 +41,7 @@ function Signup(props) {
 
 
       const userIsLogin = user ?   <Redirect to="/" /> : (
-        <div className="container">
+        <div className="container p-top">
             <form onSubmit={signUp} className="white form z-depth-1">
                 <h5 className="grey-text text-darken-3 center">
                     Signup
