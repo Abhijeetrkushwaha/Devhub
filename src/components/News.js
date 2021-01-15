@@ -22,8 +22,6 @@ class News extends Component {
 
         // console.log(this.state.news);
 
-      }).catch((err) => {
-        console.log(err);
       })
   }
   
