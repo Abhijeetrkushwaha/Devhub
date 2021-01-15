@@ -41,7 +41,7 @@ class News extends Component {
                   <img src={news.urlToImage} alt={news.source.id}/>
                 </div>
                 <span className="card-title">{news.title.slice(0, 10)}...</span>
-                <p>{news.description.slice(0, 50)}...</p>
+                <p>{news.description.slice(0, 50)}....</p>
                 <a href={news.url} rel="noopener noreferrer" target="_blank" className="news-btn btn btn-small white purple-text">View</a>
               </div>
               <div className="card-action white-text">
