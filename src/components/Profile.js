@@ -43,7 +43,7 @@ function Profile({ user }) {
         <div className="container">
             <div className="row">
             <div className="section center col s12 m12 l6">
-                <div className="card profile-detail z-depth-0">
+                <div className="card profile-detail z-depth-1">
                     <h4 className="purple-text">Profile</h4>
                     <div className="avatar">
                         <h2 className="avatar-name">
