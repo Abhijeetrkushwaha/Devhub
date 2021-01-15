@@ -75,7 +75,7 @@ const Chat = ({ user }) => {
   //     }
   // }
 
-  const text = messages.length ? (
+  const text = !messages.length ? (
     messages.map((message) => {
       return (
         <div
@@ -106,7 +106,7 @@ const Chat = ({ user }) => {
     })
   ) : (
     <div className="preloader-wrapper small active preloader">
-      <div className="spinner-layer spinner-blue-only">
+      {/* <div className="spinner-layer spinner-blue-only">
         <div className="circle-clipper left">
           <div className="circle"></div>
         </div>
@@ -115,6 +115,15 @@ const Chat = ({ user }) => {
         </div>
         <div className="circle-clipper right">
           <div className="circle"></div>
+        </div>
+      </div> */}
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
         </div>
       </div>
     </div>
