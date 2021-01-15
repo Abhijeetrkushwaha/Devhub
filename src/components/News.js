@@ -12,7 +12,7 @@ class News extends Component {
   componentDidMount() {
     axios
       .get(
-        `http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${process.env.REACT_APP_NEWS_API}`
+        `http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=3ce02af4258c49809b5548d912eaa129`
       )
       .then((res) => {
 
