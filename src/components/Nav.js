@@ -88,6 +88,11 @@ function Nav({ user }) {
         </Link>
       </li>
       <li>
+        <Link to="/news" onClick={() => setIsOpen(false)}>
+          News
+        </Link>
+      </li>
+      <li>
         <Link
           to="/"
           onClick={() => {

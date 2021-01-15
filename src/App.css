@@ -340,6 +340,18 @@ textarea:not(.browser-default):focus:not([readonly]){
   margin-top: 20px;
 }
 /* Chat.js */
+
+/* News.js */
+
+.card-img{
+  margin-top: 7px;
+}
+.news-btn{
+  margin: 10px 0;
+}
+
+/* News.js */
+
 @media screen and (max-width: 900px){
   /* Nav.js */
   .nav-list{

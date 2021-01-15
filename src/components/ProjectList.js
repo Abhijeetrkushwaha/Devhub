@@ -16,6 +16,8 @@ const ProjectList = () => {
           snapshot.docs.map((doc) => ({ project: doc.data(), id: doc.id }))
         );
       });
+
+      // $('.dropdown-trigger').dropdown();
   }, []);
 
   //   console.log(projects);
