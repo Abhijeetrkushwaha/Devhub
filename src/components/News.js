@@ -12,7 +12,7 @@ class News extends Component {
   componentDidMount() {
     axios
       .get(
-        `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=3ce02af4258c49809b5548d912eaa129`
+        `http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${process.env.REACT_APP_NEWS_API}`
       )
       .then((res) => {
 
@@ -20,8 +20,10 @@ class News extends Component {
           news: res.data.articles
         })
 
-        // console.log(this.state.news);
+        console.log(this.state.news);
 
+      }).catch((err) => {
+        console.log(err);
       })
   }
   
@@ -39,7 +41,7 @@ class News extends Component {
                   <img src={news.urlToImage} alt={news.source.id}/>
                 </div>
                 <span className="card-title">{news.title.slice(0, 10)}...</span>
-                <p>{news.description.slice(0, 50)}....</p>
+                <p>{news.description.slice(0, 50)}...</p>
                 <a href={news.url} rel="noopener noreferrer" target="_blank" className="news-btn btn btn-small white purple-text">View</a>
               </div>
               <div className="card-action white-text">
