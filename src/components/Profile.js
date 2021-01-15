@@ -28,7 +28,7 @@ function Profile({ user }) {
     mainProject.map((project) => {
       return (
         <div className="card" key={project.id}>
-        <div className="card-content project-done-no">
+        <div className="card-content project-done-no z-depth-1">
           <div className="card-title">Title: { project.project.title }</div>
         </div>
         
