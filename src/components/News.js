@@ -20,7 +20,7 @@ class News extends Component {
           news: res.data.articles
         })
 
-        console.log(this.state.news);
+        // console.log(this.state.news);
 
       }).catch((err) => {
         console.log(err);
