@@ -75,7 +75,7 @@ const Chat = ({ user }) => {
   //     }
   // }
 
-  const text = !messages.length ? (
+  const text = messages.length ? (
     messages.map((message) => {
       return (
         <div
