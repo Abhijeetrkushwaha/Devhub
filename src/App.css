@@ -314,7 +314,7 @@ textarea:not(.browser-default):focus:not([readonly]){
 }
 
 .message-guest-card{
-  background-color: rgb(221, 221, 221) !important;
+  background-color: rgb(255, 255, 255) !important;
   color: purple;
 }
 
