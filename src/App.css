@@ -135,6 +135,24 @@ img{
 .project-list .project-summary{
   padding: 10px 5px 0;
 }
+.like-info{
+  display: flex;
+  align-items: center;
+}
+.likes{
+  margin-right: 10px;
+  font-size: 20px;
+  color: rgb(184, 184, 184);
+  display: flex;
+  align-items: center;
+}
+.like-active{
+  color: #9C27B0;
+}
+.like-btn-no{
+  margin-left: 3px;
+}
+
 .welcome-greeting{
   display: flex;
   align-items: center;

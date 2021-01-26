@@ -7,6 +7,7 @@ import moment from "moment";
 
 const ProjectList = () => {
   const [projects, setProjects] = useState([]);
+  const [isLike, setIsLike] = useState(false)
 
   useEffect(() => {
     db.collection("projects")
@@ -21,6 +22,14 @@ const ProjectList = () => {
   }, []);
 
   //   console.log(projects);
+  let handleLikeClick = () => {
+    if(!isLike) {
+      setIsLike(true)
+    } else {
+      setIsLike(false)
+    }
+    console.log(isLike);
+  }
 
   const projectLists = projects.map(({ project, id }) => {
     return (
@@ -43,9 +52,17 @@ const ProjectList = () => {
           </div>
           <div className="card-content project-content grey-text text-darken-3">
             <span className="card-title black-text">{project.title}</span>
-            <Link to={"/project/" + id} className="btn-small purple">
-              View
-            </Link>
+            <div className="like-info">
+              <div className="likes">
+                <div className={`like-btn ${isLike && 'like-active'}`} onClick={handleLikeClick}>
+                  <i className="fas fa-heart"></i>
+                </div>
+                <div className="like-btn-no">1</div>
+              </div>
+              <Link to={"/project/" + id} className="btn-small purple">
+                View
+              </Link>
+            </div>
           </div>
           <div className="card-action grey lighten-4 grey-text">
             <div className="project-time">

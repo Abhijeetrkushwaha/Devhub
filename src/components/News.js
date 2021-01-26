@@ -20,7 +20,7 @@ class News extends Component {
           news: res.data.articles
         })
 
-        console.log(this.state.news);
+        // console.log(res.data);
 
       }).catch((err) => {
         console.log(err);
@@ -72,3 +72,32 @@ class News extends Component {
 }
 
 export default News;
+
+// import React, { useEffect } from 'react';
+// import axios from 'axios'
+
+// function News() {
+
+//   useEffect(() => {
+//     // async function getData() {
+//     //   const res = await axios.get(`http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${process.env.REACT_APP_NEWS_API}`)
+//     //   console.log(res);
+//     // }
+//     // getData()
+//     axios
+//       .get(
+//         `http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${process.env.REACT_APP_NEWS_API}`
+//       ).then((res) => {
+//         console.log(res);
+//       })
+//   })
+
+//   return (
+//     <div>
+//       hi
+//     </div>
+//   )
+// }
+
+// export default News
+
