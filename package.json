@@ -13,6 +13,7 @@
     "moment": "^2.29.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-flip-move": "^3.0.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },

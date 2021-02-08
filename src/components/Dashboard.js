@@ -14,7 +14,7 @@ function Dashboard({ user }) {
             </div>
             <div className="row">
                 <div className="col s12 m12 l6 no-mg">
-                    <ProjectList />
+                    <ProjectList user={user} />
                 </div>
                 <div className="col s12 m12 l5 offset-l1 hide-on-med-and-down">
                     <Notification />
