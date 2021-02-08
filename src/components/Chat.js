@@ -4,40 +4,12 @@ import { Redirect } from "react-router-dom";
 import { db } from "../firebase";
 import firebase from "firebase";
 import moment from "moment";
+// import FlipMove from 'react-flip-move'
 // import Loader from './Loader'
 
 const Chat = ({ user }) => {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
-  // const [username, setUser] = useState('');
-  // const [id, setId] = useState(null)
-
-  // useEffect(() => {
-  //     // setUser(prompt("Please enter your name"))
-  //     let localData = JSON.parse(localStorage.getItem("USERNAME"))
-  //     // console.log(localData.username);
-  //     if(localData){
-  //         if(localData.username){
-  //             setUser(localData.username)
-  //         } else {
-  //             setUser('unknown user')
-  //         }
-  //         setId(localData.id)
-  //     } else {
-  //         let userDetails = {
-  //             username: prompt("Please enter your name"),
-  //             id: Math.random()
-  //         }
-  //         localStorage.setItem("USERNAME", JSON.stringify(userDetails))
-  //         if(userDetails.username){
-  //             setUser(userDetails.username)
-  //         } else {
-  //             setUser('unknown user')
-  //         }
-  //         setId(userDetails.id)
-  //     }
-
-  // }, [])
 
   useEffect(() => {
     db.collection("messages")
@@ -78,23 +50,12 @@ const Chat = ({ user }) => {
   const text = messages.length ? (
     messages.map((message) => {
       return (
-        <div
-          className={`message ${user.uid === message.id && "message-user"}`}
-          key={Math.random()}
-        >
-          <span
-            className={user.uid === message.id ? "user-right" : "user-left"}
-          >
+        <div  className={`message ${user.uid === message.id && "message-user"}`}  key={Math.random()}>
+          <span  className={user.uid === message.id ? "user-right" : "user-left"} >
             {message.username}
           </span>{" "}
           <br />
-          <p
-            className={`message-content ${
-              user.uid === message.id
-                ? "message-user-card"
-                : "message-guest-card"
-            }`}
-          >
+          <p className={`message-content ${ user.uid === message.id  ? "message-user-card"  : "message-guest-card"}`} >
             {message.text} <br />
             <span className="chat-time">
               {message.timestamp &&
@@ -106,24 +67,13 @@ const Chat = ({ user }) => {
     })
   ) : (
     <div className="preloader-wrapper small active preloader">
-      {/* <div className="spinner-layer spinner-blue-only">
+      <div className="spinner-layer spinner-blue-only">
         <div className="circle-clipper left">
           <div className="circle"></div>
-        </div>
-        <div className="gap-patch">
+        </div><div className="gap-patch">
           <div className="circle"></div>
-        </div>
-        <div className="circle-clipper right">
+        </div><div className="circle-clipper right">
           <div className="circle"></div>
-        </div>
-      </div> */}
-      <div class="spinner-layer spinner-blue-only">
-        <div class="circle-clipper left">
-          <div class="circle"></div>
-        </div><div class="gap-patch">
-          <div class="circle"></div>
-        </div><div class="circle-clipper right">
-          <div class="circle"></div>
         </div>
       </div>
     </div>
@@ -149,7 +99,10 @@ const Chat = ({ user }) => {
           Send
         </button>
       </form>
-      <div className="all-msg">{text}</div>
+      <div className="all-msg">
+        {/* <FlipMove duration={500} easing="ease-in-out">{text}</FlipMove> */}
+        {text}
+      </div>
     </div>
   );
   return <div>{userIsLogin}</div>;
